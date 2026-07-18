@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+@import url('https://unpkg.com/leaflet@1.9.4/dist/leaflet.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #0B4C8C;
+  --secondary: #2CA9E1;
+  --accent: #00B4D8;
+  --dark: #061E3E;
+  --light: #F0F9FF;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  scroll-behavior: smooth;
+  direction: rtl;
+}
+
+body {
+  margin: 0;
+  font-family: "Tajawal", sans-serif;
+  color: #061E3E;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #2CA9E1;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #E6F0FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#0B4C8C, #2CA9E1);
+  border-radius: 10px;
+}
+
+.gradient-blue {
+  background: linear-gradient(135deg, #0B4C8C 0%, #2CA9E1 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0B4C8C, #2CA9E1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.water-pattern {
+  background-image: radial-gradient(
+    circle at center,
+    rgba(44, 169, 225, 0.12) 2px,
+    transparent 2px
+  );
+  background-size: 32px 32px;
+}
+
+.leaflet-container {
+  width: 100%;
+  border-radius: 20px;
+  font-family: "Tajawal", sans-serif;
+  z-index: 1;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 15px;
+}
+
+.custom-marker {
+  animation: markerPulse 2s infinite;
+}
+
+@keyframes markerPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(11, 76, 140, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(11, 76, 140, 0.8));
+  }
+}
